@@ -5,7 +5,7 @@
 
 template<typename T>
 class TPQueue {
-private:  
+ private:
     struct ITEM {
         T data;
         ITEM* next;
@@ -21,7 +21,7 @@ private:
     ITEM* head;
     ITEM* tail;
     
-public:    
+ public: 
     T pop() {
         if (head) {
             ITEM* a = head->next;
