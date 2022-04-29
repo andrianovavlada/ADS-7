@@ -5,7 +5,7 @@
 
 template<typename T>
 class TPQueue {
-private:
+private:  
     struct ITEM {
         T data;
         ITEM* next;
@@ -20,7 +20,8 @@ private:
     }
     ITEM* head;
     ITEM* tail;
-public:
+    
+public:    
     T pop() {
         if (head) {
             ITEM* a = head->next;
@@ -30,8 +31,7 @@ public:
             delete head;
             head = a;
             return data;
-        }
-        else {
+        } else {
             throw std::string("Empty");
         }
     }
@@ -44,16 +44,13 @@ public:
             tail->next = item;
             tail->next->prev = tail;
             tail = item;
-        }
-        else if (!a && !head) {// вставка в пустой список
+        } else if (!a && !head) {// вставка в пустой список
             head = tail = item;
-        }
-        else if (!a->prev) { // вставка в начало
+        } else if (!a->prev) { // вставка в начало
             a->prev = item;
             item->next = a;
             head = item;
-        }
-        else { // вставка в середину
+        } else { // вставка в середину
             a->prev->next = item;
             item->prev = a->prev;
             item->next = a;
