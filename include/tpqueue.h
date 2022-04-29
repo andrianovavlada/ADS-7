@@ -20,8 +20,8 @@ class TPQueue {
     }
     ITEM* head;
     ITEM* tail;
-    
- public: 
+
+ public:
     T pop() {
         if (head) {
             ITEM* a = head->next;
